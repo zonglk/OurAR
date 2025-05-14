@@ -9,7 +9,7 @@ import Foundation
 import Starscream
 import CloudAR
 
-class WebSocketClient : WebSocketDelegate,ModelLaunchProtocol
+class WebSocketClient : NSObject, WebSocketDelegate,ModelLaunchProtocol
 {
     public static let shared = WebSocketClient()
     
@@ -32,11 +32,11 @@ class WebSocketClient : WebSocketDelegate,ModelLaunchProtocol
     }
     
     //保持单例
-    private init() {
-        MLDelegateManager.add(self)
-    }
+//    private init() {
+//        MLDelegateManager.add(self)
+//    }
     
-    func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
+    func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
         switch event {
         case let .connected(headers):
             isConnected = true
@@ -62,16 +62,16 @@ class WebSocketClient : WebSocketDelegate,ModelLaunchProtocol
             break
         case .cancelled:
             isConnected = false
-            WebSocketClient.shared.connect()
+//            WebSocketClient.shared.connect()
             print("ws connect cancel")
             break
         case let .error(error):
             isConnected = false
             print("ws connect error:\(String(describing: error))")
             break
-        case .peerClosed:
-            print("peerClosed")
-            break
+//        case .peerClosed:
+//            print("peerClosed")
+//            break
         }
     }
     

@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.7.1)
   - SnapKit (5.0.0)
+  - Starscream (4.0.4)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire (= 5.7.1)
   - SnapKit (= 5.0.0)
+  - Starscream (~> 4.0.4)
   - SVProgressHUD (~> 2.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - SnapKit
+    - Starscream
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ebeece33f92e385fccc68f61c457daa55105a3ea
+PODFILE CHECKSUM: 131e9ed47dd62464630cdade0af811bb04176e53
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.16.2
