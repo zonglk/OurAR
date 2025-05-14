@@ -67,6 +67,7 @@ class ModelLoadViewController: UIViewController,SocketEventProtocol
         if let id = json["id"] as? String {
             if id == "8" {
                 if let progress = json["progress"] as? String {
+                    print("场景加载进度：\(progress)")
                     self.loadProgress = CGFloat((progress as NSString).floatValue)
                     if loadProgress >= 1 {
                         loadPhaseNotify?(8)
